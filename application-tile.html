@@ -1,0 +1,101 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="import" href="../iron-image/iron-image.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-style/shadow.html">
+
+<!--
+`application-tile`
+Appsco application tile is used to represent applicaiton in appsco
+
+@demo demo/index.html 
+-->
+
+<dom-module id="application-tile">
+  <template>
+    <style >
+      :host {
+          display: block;
+          text-align: center;
+          max-width: 180px;
+          --paper-button-ink-color: #4285f4;
+        @apply(--shadow-elevation-2dp);
+        position: relative;
+      }
+      :host:hover {
+        @apply(--shadow-elevation-4dp);
+      }
+      :host h3 {
+          font-weight: 400;
+          @apply(--paper-font-common-base);
+          @apply(--paper-font-common-nowrap);
+          /*@apply(--paper-font-caption);*/
+          /*@apply(-paper-font-title);*/
+      }
+      :host iron-image[app] {
+          width: 64px;
+          height: 64px;
+          margin: 10px;
+      }
+      :host .actions {
+        text-align: left;
+      }
+      :host hr {
+        /*margin: 0;*/
+      }
+      :host iron-image[user] {
+          border-radius: 50%;
+          width: 22px;
+          height: 22px;
+          position: absolute;
+          top:0;
+          left: 0;
+          border: 1px solid #9a9a9a;
+          cursor: pointer;
+      }
+      :host iron-image[user]:nth-child(2) {
+        left: 20px;
+      }
+      :host iron-image[user]:nth-child(3) {
+        left: 40px;
+      }
+      :host .user-images {
+          position: absolute;
+          left: 10px;
+          top: 82px;
+      }
+      :host .user-images[off] {
+        display: none;
+      }
+    </style>
+    <iron-image sizing="cover" preload fade src="https://apps.appsco.com/icon/18.png" app></iron-image>
+    <div>
+      <hr>
+      <h3>[[ prop1 ]]</h3>
+      <div class="actions">
+          <paper-button>Open</paper-button>
+      </div>
+    </div>
+    <div class="user-images" >
+        <iron-image sizing="cover" preload fade src="http://app-layout-assets.appspot.com/assets/PharrellWilliams.jpg" user></iron-image>
+        <iron-image sizing="cover" preload fade src="https://www.gravatar.com/avatar/4fd03938b42cbaf65b1f69d11094f497?s=328&d=identicon&r=PG" user></iron-image>
+        <iron-image sizing="cover" preload fade src="https://yt3.ggpht.com/-0qLU8H96w-4/AAAAAAAAAAI/AAAAAAAAAAA/4gScB0pwf5M/s900-c-k-no-rj-c0xffffff/photo.jpg" user></iron-image>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'application-tile',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'Jira Webcomputing',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
