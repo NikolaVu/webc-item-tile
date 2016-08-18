@@ -1,10 +1,15 @@
 {
   "name": "application-tile",
-  "description": "Appsco application tile is used to represent applicaiton in appsco",
+  "description": "Appsco application tile is used to represent application in appsco",
   "main": "application-tile.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
-    "iron-image": "PolymerElements/iron-image#^1.2.4"
+    "iron-image": "PolymerElements/iron-image#^1.2.4",
+    "paper-fab": "PolymerElements/paper-fab#^1.2.0",
+    "paper-dialog-behavior": "PolymerElements/paper-dialog-behavior#^1.2.7",
+    "paper-dialog": "PolymerElements/paper-dialog#^1.1.0",
+    "paper-listbox": "polymerelements/paper-listbox#^1.1.2",
+    "paper-item": "PolymerElements/paper-item#^1.2.1"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

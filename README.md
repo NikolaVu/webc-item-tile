@@ -1,6 +1,6 @@
 # \<application-tile\>
 
-Appsco application tile is used to represent applicaiton in appsco
+Appsco application tile is used to represent application in appsco
 
 ## Install the Polymer-CLI
 
