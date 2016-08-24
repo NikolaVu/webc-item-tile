@@ -1,7 +1,7 @@
 {
-  "name": "application-tile",
-  "description": "Appsco application tile is used to represent application in appsco",
-  "main": "application-tile.html",
+  "name": "item-tile",
+  "description": "Item tile is used to represent items in AppsCo",
+  "main": "item-tile.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
     "iron-image": "PolymerElements/iron-image#^1.2.4",
