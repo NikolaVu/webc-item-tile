@@ -1,4 +1,4 @@
-# \<application-tile\>
+# \<item-tile\>
 
 Appsco application tile is used to represent application in appsco
 
