@@ -161,6 +161,11 @@ Custom property | Description | Default
 
             },
 
+            /**
+             * Internal implementation of event firing.
+             * Attributes in fired event - `event.detail`: `itemTitle`, `itemIcon`, `item`
+             * @private
+             */
             __fireEvent: function(event) {
 
                 this.fire(
@@ -176,6 +181,8 @@ Custom property | Description | Default
 
             /**
              * Implementation of action on Info button tap.
+             * Event: `item-info`.
+             * Listen for event: `on-item-info`.
              * @private
              */
             __handleTapInfoAction: function() {
@@ -186,6 +193,8 @@ Custom property | Description | Default
 
             /**
              * Implementation of action on Login button tap.
+             * Event: `item-login`.
+             * Listen for event: `on-item-login`.
              * @private
              */
             __handleTapLoginAction: function() {
