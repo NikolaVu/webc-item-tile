@@ -12,19 +12,72 @@
 </head>
 <body>
 
-<test-fixture id="basic">
+<test-fixture id="item-tile-fixture">
+
     <template>
         <item-tile></item-tile>
     </template>
+
 </test-fixture>
 
 <script>
     suite('item-tile', function() {
+        var itemTile;
 
-        test('instantiating the element works', function() {
-            var element = fixture('basic');
-            assert.equal(element.is, 'item-tile');
+        setup(function() {
+            itemTile = fixture('item-tile-fixture')
         });
+
+        test('Instantiating the element', function() {
+
+            assert.equal(itemTile.is, 'item-tile');
+
+        });
+
+        test('Test existance of properties', function() {
+
+            expect(itemTile).to.have.property('itemTitle');
+            expect(itemTile).to.have.property('itemIcon');
+
+        });
+
+        test('Test type of properties', function() {
+
+            expect(itemTile.itemTitle, 'itemTitle value should be a String').to.be.a('String');
+            expect(itemTile.itemIcon, 'itemIcon value should be a String').to.be.a('String');
+            expect(itemTile.item, 'itemTitle value should be an Object').to.be.an('Object');
+
+
+        });
+
+        test('Test fire event: item-info', function(done) {
+
+            itemTile.addEventListener('item-info', function(event) {
+                expect(event.detail.itemTitle, 'itemTitle should be sent within fired event').to.exist;
+                expect(event.detail.itemIcon, 'itemIcon should be sent within fired event').to.exist;
+                expect(event.detail.item, 'item should be sent within fired event').to.exist;
+
+                done();
+            });
+
+            Polymer.dom(itemTile.root).querySelector('#infoAction').click();
+
+        });
+
+        test('Test fire event: item-login', function(done) {
+
+            itemTile.addEventListener('item-login', function(event) {
+                expect(event.detail.itemTitle, 'itemTitle should be sent within fired event').to.exist;
+                expect(event.detail.itemIcon, 'itemIcon should be sent within fired event').to.exist;
+                expect(event.detail.item, 'item should be sent within fired event').to.exist;
+
+                done();
+            });
+
+            Polymer.dom(itemTile.root).querySelector('#loginAction').click();
+
+        });
+
 
     });
 </script>
