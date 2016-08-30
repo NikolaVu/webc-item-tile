@@ -41,8 +41,8 @@ Custom property | Description | Default
                 text-align: center;
                 min-width: 140px;
                 max-width: 160px;
-                height: 156px;
-                padding: 24px 0 0 0;
+                height: 146px;
+                padding: 34px 0 0 0;
                 position: relative;
                 background-color: var(--background-color);
                 color: var(--color);
@@ -51,18 +51,11 @@ Custom property | Description | Default
             :host[_display] {
                 display: block;
             }
-            :host[_actions-hide] {
-                height: 130px;
-                padding-top: 50px;
-            }
             :host:hover {
                 @apply(--shadow-elevation-4dp);
             }
-            :host .item-title {
-                @apply(--paper-font-caption);
-                font-size: 14px;
-                margin: 10px 0 0 0;
-                padding: 0 6px;
+            :host:focus {
+                border: 0;
             }
             :host a {
                 text-decoration: none;
@@ -74,11 +67,14 @@ Custom property | Description | Default
                 float: right;
             }
             :host iron-image {
-                width: 64px;
-                height: 64px;
+                width: 48px;
+                height: 48px;
             }
-            :host:focus {
-                border: 0;
+            :host .item-title {
+                @apply(--paper-font-caption);
+                font-size: 14px;
+                margin: 10px 0 0 0;
+                padding: 0 6px;
             }
             :host .actions {
                 background-color: #fafafa;
@@ -144,7 +140,8 @@ Custom property | Description | Default
                  * Item object.
                  */
                 item: {
-                    type: Object
+                    type: Object,
+                    value: {}
                 }
             },
 
